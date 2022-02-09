@@ -11,6 +11,7 @@ on: # 실행하기 위한 조건
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
