@@ -1,0 +1,21 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on: # 실행하기 위한 조건
+  push: # main branch에서 push event가 일어나면 workflow를 실행
+    branches: [ main ]
+  pull_request: # main branch에서 pull request event가 일어나면 workflow를 실행
+    branches: [ main ]
+
+jobs:
+  build:
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
